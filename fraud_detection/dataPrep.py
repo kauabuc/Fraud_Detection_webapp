@@ -39,7 +39,7 @@ class FraudDetection(object):
         df_final_features = df_final_features.rename(columns={"quanTransf_y": "quanTransf"})
 
         df_final_features = df_final_features.drop(
-            ['step', 'nameOrig', 'nameDest', 'newbalanceDest', 'hours',"quanTransf_x"], axis=1)
+            ['step', 'nameOrig', 'nameDest', 'newbalanceDest', 'hours'], axis=1)
 
         df_final_features['type'] = df_final_features['type'].map(
             {'PAYMENT': 0.0, 'TRANSFER': 1.0, 'CASH_OUT': 2.0, 'DEBIT': 3.0, 'CASH_IN': 4.0})
